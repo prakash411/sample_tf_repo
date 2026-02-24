@@ -8,4 +8,10 @@ resource "aws_security_group" "web-sg" {
         cidr_blocks = [ "0.0.0.0/0" ]
         description = "to allow instance to connect to RDP"
     }  
+    egress {
+        protocol = "ALL"
+        from_port = "0"
+        to_port = "0"
+        cidr_blocks = ["0.0.0.0/0"]
+    }
 }
