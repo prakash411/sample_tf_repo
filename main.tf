@@ -1,8 +1,3 @@
-resource "aws_iam_instance_profile" "ec2-profile" {
-  name = "ec2-ssm-role"
-  role = aws_iam_role.ec2-ssm-role.name
-}
-
 resource "aws_instance" "www" {
   ami                    = var.ami
   instance_type          = var.instance_type
