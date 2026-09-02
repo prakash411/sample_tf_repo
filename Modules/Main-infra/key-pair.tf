@@ -3,7 +3,7 @@ resource "tls_private_key" "my_key" {
 }
 
 resource "local_file" "name2" {
-  filename = "../keys/my_private_key_pem"
+  filename = "../keys/my_private_key.pem"
   content  = tls_private_key.my_key.private_key_pem
 }
 

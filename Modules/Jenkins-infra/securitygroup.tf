@@ -8,6 +8,20 @@ resource "aws_security_group" "web-sg" {
     cidr_blocks = ["0.0.0.0/0"]
     description = "to allow instance to connect to RDP"
   }
+  ingress {
+    protocol    = "TCP"
+    from_port   = "8080"
+    to_port     = "8080"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "to allow instance to connect to jenkins"
+  }
+  ingress {
+    protocol    = "TCP"
+    from_port   = "22"
+    to_port     = "22"
+    cidr_blocks = ["0.0.0.0/0"]
+    description = "to allow instance to connect to SSH"
+  }
   egress {
     protocol    = "ALL"
     from_port   = "0"
@@ -15,3 +29,4 @@ resource "aws_security_group" "web-sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
